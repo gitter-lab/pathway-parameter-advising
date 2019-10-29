@@ -1,0 +1,68 @@
+[reading generic edge list: read_edge_list func]  filename: ../../data/mainExperiment/pgdGraphlets/netbox/IL2_p6e-10.sif
+|V|: 30
+|E|: 196
+p: 0.450575
+d_max: 22
+d_avg: 13
+r = 0.0207887
+K = 11
+************************************************************
+total_2_1edge = 196
+total_2_indep = 239
+----------------------------------------
+total_3_tris = 658
+total_2_star = 948
+total_3_1edge = 1618
+total_3_indep = 836
+----------------------------------------
+total_4_clique = 1428
+total_4_chordcycle = 2340
+total_4_tailed_tris = 3616
+total_4_cycle = 269
+total_3_star = 891
+total_4_path = 2188
+----------------------------------------
+total_4_1edge = 4887
+total_4_2edge = 882
+total_4_2star = 5559
+total_4_tri = 3758
+total_4_indep = 1587
+************************************************************
+graphlet decomposition time: 0.012826 sec
+--------------------------------------------------------------------------------
+Graphlet Frequency Distribution (GFD)
+--------------------------------------------------------------------------------
+4-clique     	0.0521073
+4-chordal-cycle	0.0853859
+4-tailed-tri	0.131947
+4-cycle       	0.00981573
+3-star       	0.0325123
+4-path       	0.0798394
+4-node-1-tri   	0.137128
+4-node-2-star  	0.202846
+4-node-2-edge	0.0321839
+4-node-1-edge  	0.178325
+4-node-indep  	0.0579091
+
+
+--------------------------------------------------------------------------------
+Connected Motif Graphlet Frequency Distribution (GFD)
+--------------------------------------------------------------------------------
+4-clique     	0.13306
+4-chordal-cycle	0.21804
+4-tailed-tri	0.336936
+4-cycle       	0.0250652
+3-star       	0.0830227
+4-path       	0.203876
+
+
+--------------------------------------------------------------------------------
+Disconnected Motif Graphlet Frequency Distribution (GFD)
+--------------------------------------------------------------------------------
+4-node-1-tri   	0.225394
+4-node-2-star	0.333413
+4-node-2-edge  	0.0528999
+4-node-1-edge  	0.293109
+4-node-indep  	0.0951838
+
+

@@ -1,0 +1,68 @@
+[reading generic edge list: read_edge_list func]  filename: ../../data/mainExperiment/pgdGraphlets/netbox/IL2_p6e-2.sif
+|V|: 288
+|E|: 3883
+p: 0.0939557
+d_max: 117
+d_avg: 26
+r = -0.0984033
+K = 21
+************************************************************
+total_2_1edge = 3883
+total_2_indep = 37445
+----------------------------------------
+total_3_tris = 17044
+total_2_star = 116329
+total_3_1edge = 826748
+total_3_indep = 2979815
+----------------------------------------
+total_4_clique = 44266
+total_4_chordcycle = 235927
+total_4_tailed_tris = 1215224
+total_4_cycle = 84036
+total_3_star = 1527802
+total_4_path = 2150422
+----------------------------------------
+total_4_1edge = 83070246
+total_4_2edge = 3231072
+total_4_2star = 21031069
+total_4_tri = 2993398
+total_4_indep = 165136978
+************************************************************
+graphlet decomposition time: 0.010067 sec
+--------------------------------------------------------------------------------
+Graphlet Frequency Distribution (GFD)
+--------------------------------------------------------------------------------
+4-clique     	0.000157687
+4-chordal-cycle	0.000840434
+4-tailed-tri	0.00432895
+4-cycle       	0.000299358
+3-star       	0.00544243
+4-path       	0.00766037
+4-node-1-tri   	0.0106633
+4-node-2-star  	0.0749182
+4-node-2-edge	0.0115099
+4-node-1-edge  	0.295918
+4-node-indep  	0.588261
+
+
+--------------------------------------------------------------------------------
+Connected Motif Graphlet Frequency Distribution (GFD)
+--------------------------------------------------------------------------------
+4-clique     	0.00841931
+4-chordal-cycle	0.0448729
+4-tailed-tri	0.231133
+4-cycle       	0.0159835
+3-star       	0.290585
+4-path       	0.409006
+
+
+--------------------------------------------------------------------------------
+Disconnected Motif Graphlet Frequency Distribution (GFD)
+--------------------------------------------------------------------------------
+4-node-1-tri   	0.0108668
+4-node-2-star	0.0763481
+4-node-2-edge  	0.0117296
+4-node-1-edge  	0.301566
+4-node-indep  	0.599489
+
+

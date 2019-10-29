@@ -1,0 +1,68 @@
+[reading generic edge list: read_edge_list func]  filename: ../../data/mainExperiment/pgdGraphlets/netbox/IL2_p2e-11.sif
+|V|: 23
+|E|: 88
+p: 0.347826
+d_max: 15
+d_avg: 7
+r = -0.120879
+K = 7
+************************************************************
+total_2_1edge = 88
+total_2_indep = 165
+----------------------------------------
+total_3_tris = 152
+total_2_star = 336
+total_3_1edge = 720
+total_3_indep = 563
+----------------------------------------
+total_4_clique = 153
+total_4_chordcycle = 387
+total_4_tailed_tris = 785
+total_4_cycle = 49
+total_3_star = 305
+total_4_path = 616
+----------------------------------------
+total_4_1edge = 2247
+total_4_2edge = 304
+total_4_2star = 2033
+total_4_tri = 869
+total_4_indep = 1107
+************************************************************
+graphlet decomposition time: 0.0101049 sec
+--------------------------------------------------------------------------------
+Graphlet Frequency Distribution (GFD)
+--------------------------------------------------------------------------------
+4-clique     	0.0172784
+4-chordal-cycle	0.0437041
+4-tailed-tri	0.0886505
+4-cycle       	0.0055336
+3-star       	0.0344438
+4-path       	0.0695652
+4-node-1-tri   	0.0981366
+4-node-2-star  	0.229588
+4-node-2-edge	0.0343309
+4-node-1-edge  	0.253755
+4-node-indep  	0.125014
+
+
+--------------------------------------------------------------------------------
+Connected Motif Graphlet Frequency Distribution (GFD)
+--------------------------------------------------------------------------------
+4-clique     	0.0666667
+4-chordal-cycle	0.168627
+4-tailed-tri	0.342048
+4-cycle       	0.0213508
+3-star       	0.132898
+4-path       	0.26841
+
+
+--------------------------------------------------------------------------------
+Disconnected Motif Graphlet Frequency Distribution (GFD)
+--------------------------------------------------------------------------------
+4-node-1-tri   	0.13247
+4-node-2-star	0.309909
+4-node-2-edge  	0.0463415
+4-node-1-edge  	0.34253
+4-node-indep  	0.16875
+
+

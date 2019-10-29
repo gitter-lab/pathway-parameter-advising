@@ -1,0 +1,68 @@
+[reading generic edge list: read_edge_list func]  filename: ../../data/mainExperiment/pgdGraphlets/netbox/IL2_p5e-4.sif
+|V|: 130
+|E|: 1600
+p: 0.190817
+d_max: 77
+d_avg: 24
+r = -0.14893
+K = 19
+************************************************************
+total_2_1edge = 1600
+total_2_indep = 6785
+----------------------------------------
+total_3_tris = 7896
+total_2_star = 32979
+total_3_1edge = 115154
+total_3_indep = 201731
+----------------------------------------
+total_4_clique = 22243
+total_4_chordcycle = 93591
+total_4_tailed_tris = 316750
+total_4_cycle = 23100
+total_3_star = 252803
+total_4_path = 341523
+----------------------------------------
+total_4_1edge = 3835455
+total_4_2edge = 264149
+total_4_2star = 1833796
+total_4_tri = 409888
+total_4_indep = 3965582
+************************************************************
+graphlet decomposition time: 0.00756216 sec
+--------------------------------------------------------------------------------
+Graphlet Frequency Distribution (GFD)
+--------------------------------------------------------------------------------
+4-clique     	0.0019582
+4-chordal-cycle	0.00823946
+4-tailed-tri	0.0278857
+4-cycle       	0.00203365
+3-star       	0.022256
+4-path       	0.0300666
+4-node-1-tri   	0.0360852
+4-node-2-star  	0.161442
+4-node-2-edge	0.0232548
+4-node-1-edge  	0.337661
+4-node-indep  	0.349117
+
+
+--------------------------------------------------------------------------------
+Connected Motif Graphlet Frequency Distribution (GFD)
+--------------------------------------------------------------------------------
+4-clique     	0.0211836
+4-chordal-cycle	0.0891334
+4-tailed-tri	0.301664
+4-cycle       	0.0219998
+3-star       	0.240762
+4-path       	0.325257
+
+
+--------------------------------------------------------------------------------
+Disconnected Motif Graphlet Frequency Distribution (GFD)
+--------------------------------------------------------------------------------
+4-node-1-tri   	0.0397607
+4-node-2-star	0.177885
+4-node-2-edge  	0.0256235
+4-node-1-edge  	0.372054
+4-node-indep  	0.384677
+
+

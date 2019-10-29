@@ -1,0 +1,68 @@
+[reading generic edge list: read_edge_list func]  filename: ../../data/mainExperiment/pgdGraphlets/netbox/IL2_p4e-8.sif
+|V|: 37
+|E|: 296
+p: 0.444444
+d_max: 28
+d_avg: 16
+r = -0.0299746
+K = 12
+************************************************************
+total_2_1edge = 296
+total_2_indep = 370
+----------------------------------------
+total_3_tris = 1135
+total_2_star = 1967
+total_3_1edge = 3021
+total_3_indep = 1647
+----------------------------------------
+total_4_clique = 2593
+total_4_chordcycle = 5894
+total_4_tailed_tris = 9060
+total_4_cycle = 840
+total_3_star = 2674
+total_4_path = 5843
+----------------------------------------
+total_4_1edge = 11751
+total_4_2edge = 2138
+total_4_2star = 13902
+total_4_tri = 7370
+total_4_indep = 3980
+************************************************************
+graphlet decomposition time: 0.00729394 sec
+--------------------------------------------------------------------------------
+Graphlet Frequency Distribution (GFD)
+--------------------------------------------------------------------------------
+4-clique     	0.0392611
+4-chordal-cycle	0.0892422
+4-tailed-tri	0.137179
+4-cycle       	0.0127186
+3-star       	0.0404875
+4-path       	0.08847
+4-node-1-tri   	0.111591
+4-node-2-star  	0.210493
+4-node-2-edge	0.0323719
+4-node-1-edge  	0.177924
+4-node-indep  	0.0602619
+
+
+--------------------------------------------------------------------------------
+Connected Motif Graphlet Frequency Distribution (GFD)
+--------------------------------------------------------------------------------
+4-clique     	0.0963797
+4-chordal-cycle	0.219075
+4-tailed-tri	0.336753
+4-cycle       	0.0312221
+3-star       	0.0993904
+4-path       	0.21718
+
+
+--------------------------------------------------------------------------------
+Disconnected Motif Graphlet Frequency Distribution (GFD)
+--------------------------------------------------------------------------------
+4-node-1-tri   	0.188294
+4-node-2-star	0.355177
+4-node-2-edge  	0.054623
+4-node-1-edge  	0.300222
+4-node-indep  	0.101684
+
+

@@ -1,0 +1,68 @@
+[reading generic edge list: read_edge_list func]  filename: ../../data/mainExperiment/pgdGraphlets/netbox/IL2_p3e-15.sif
+|V|: 15
+|E|: 30
+p: 0.285714
+d_max: 7
+d_avg: 4
+r = -0.186279
+K = 3
+************************************************************
+total_2_1edge = 30
+total_2_indep = 75
+----------------------------------------
+total_3_tris = 17
+total_2_star = 68
+total_3_1edge = 203
+total_3_indep = 167
+----------------------------------------
+total_4_clique = 3
+total_4_chordcycle = 15
+total_4_tailed_tris = 77
+total_4_cycle = 6
+total_3_star = 22
+total_4_path = 104
+----------------------------------------
+total_4_1edge = 446
+total_4_2edge = 84
+total_4_2star = 334
+total_4_tri = 85
+total_4_indep = 189
+************************************************************
+graphlet decomposition time: 0.0102351 sec
+--------------------------------------------------------------------------------
+Graphlet Frequency Distribution (GFD)
+--------------------------------------------------------------------------------
+4-clique     	0.0021978
+4-chordal-cycle	0.010989
+4-tailed-tri	0.0564103
+4-cycle       	0.0043956
+3-star       	0.0161172
+4-path       	0.0761905
+4-node-1-tri   	0.0622711
+4-node-2-star  	0.244689
+4-node-2-edge	0.0615385
+4-node-1-edge  	0.32674
+4-node-indep  	0.138462
+
+
+--------------------------------------------------------------------------------
+Connected Motif Graphlet Frequency Distribution (GFD)
+--------------------------------------------------------------------------------
+4-clique     	0.0132159
+4-chordal-cycle	0.0660793
+4-tailed-tri	0.339207
+4-cycle       	0.0264317
+3-star       	0.0969163
+4-path       	0.45815
+
+
+--------------------------------------------------------------------------------
+Disconnected Motif Graphlet Frequency Distribution (GFD)
+--------------------------------------------------------------------------------
+4-node-1-tri   	0.0746924
+4-node-2-star	0.293497
+4-node-2-edge  	0.0738137
+4-node-1-edge  	0.391916
+4-node-indep  	0.166081
+
+

@@ -1,0 +1,68 @@
+[reading generic edge list: read_edge_list func]  filename: ../../data/mainExperiment/pgdGraphlets/netbox/IL2_p3e-14.sif
+|V|: 19
+|E|: 40
+p: 0.233918
+d_max: 10
+d_avg: 4
+r = -0.356912
+K = 3
+************************************************************
+total_2_1edge = 40
+total_2_indep = 131
+----------------------------------------
+total_3_tris = 24
+total_2_star = 121
+total_3_1edge = 366
+total_3_indep = 458
+----------------------------------------
+total_4_clique = 6
+total_4_chordcycle = 27
+total_4_tailed_tris = 141
+total_4_cycle = 13
+total_3_star = 102
+total_4_path = 211
+----------------------------------------
+total_4_1edge = 1305
+total_4_2edge = 137
+total_4_2star = 820
+total_4_tri = 165
+total_4_indep = 949
+************************************************************
+graphlet decomposition time: 0.0090189 sec
+--------------------------------------------------------------------------------
+Graphlet Frequency Distribution (GFD)
+--------------------------------------------------------------------------------
+4-clique     	0.00154799
+4-chordal-cycle	0.00696594
+4-tailed-tri	0.0363777
+4-cycle       	0.00335397
+3-star       	0.0263158
+4-path       	0.0544376
+4-node-1-tri   	0.0425697
+4-node-2-star  	0.211558
+4-node-2-edge	0.0353457
+4-node-1-edge  	0.336687
+4-node-indep  	0.24484
+
+
+--------------------------------------------------------------------------------
+Connected Motif Graphlet Frequency Distribution (GFD)
+--------------------------------------------------------------------------------
+4-clique     	0.012
+4-chordal-cycle	0.054
+4-tailed-tri	0.282
+4-cycle       	0.026
+3-star       	0.204
+4-path       	0.422
+
+
+--------------------------------------------------------------------------------
+Disconnected Motif Graphlet Frequency Distribution (GFD)
+--------------------------------------------------------------------------------
+4-node-1-tri   	0.0488744
+4-node-2-star	0.242891
+4-node-2-edge  	0.0405806
+4-node-1-edge  	0.386552
+4-node-indep  	0.281102
+
+
