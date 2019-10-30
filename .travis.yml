@@ -9,4 +9,5 @@ cache:
 install:
   - pip install networkx numpy 
 script:
-  - bash scripts/runNetBoxIL2.sh
+  - cd scripts
+  - bash runNetBoxIL2.sh
