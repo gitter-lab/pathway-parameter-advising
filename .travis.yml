@@ -1,0 +1,12 @@
+language: python
+python:
+  - "3.6"
+# Only test on Python 3.6 initially
+#  - "3.7"
+#  - "3.8"
+cache:
+  - pip
+install:
+  - pip install networkx numpy 
+script:
+  - bash scripts/runNetBoxIL2.sh
