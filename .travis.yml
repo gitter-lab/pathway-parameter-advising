@@ -9,5 +9,6 @@ cache:
 install:
   - pip install networkx numpy 
 script:
+  - unzip referencePathways/reactome/reactomeGraphlets.zip
   - cd scripts
   - bash runNetBoxIL2.sh
