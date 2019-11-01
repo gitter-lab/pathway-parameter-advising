@@ -2,6 +2,8 @@ import os
 import argparse
 import networkx as nx
 import numpy as np
+import sys
+__version__ = 0.10
 
 """
 Author: Chris Magnano
@@ -14,7 +16,7 @@ It then ranks the generated pathways by their similarity to the reference pathwa
 
 def main():
     #Handle command line arguments
-    parser = argparse.ArgumentParser(description="The pathway parameter advisor creates a ranking of pathways based on their topological distance to a set of reference pathways.")
+    parser = argparse.ArgumentParser(description="The pathway parameter advisor creates a ranking of pathways based on their topological distance to a set of reference pathways. Version %0.2f, released under the MIT liscense."%(__version__))
     parser.add_argument("--genPathwayGraphlets", help="File where each line is a graphlets file of a generated pathway.",required=True)
     parser.add_argument("--refPathwayGraphlets", help="File where each line is a graphlets file of a reference pathway.",required=True)
     parser.add_argument("--outFile", default="parameterRanking.txt", help="File to store output in.")
