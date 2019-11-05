@@ -1,8 +1,7 @@
-# pathway-parameter-advising
+# Pathway parameter advising
 [![Build Status](https://travis-ci.com/gitter-lab/pathway-parameter-advising.svg?branch=master)](https://travis-ci.com/gitter-lab/pathway-parameter-advising)
-Parameter advising for biological pathway creation algorithms
 
-Version 0.10. 
+Parameter advising for biological pathway creation algorithms.
 
 ## Dependencies
 
@@ -32,6 +31,13 @@ Arguments:
 >
 >  --verbose             If set, will print intermediate status updates. Optional, default = False.
 
+## Example
+
+`scripts/runNetBoxIL2.sh` runs pathway parameter advising for the precomputed graphlet files for NetBox IL2 pathways using Reactome reference pathways.
+It must be run from the `scripts` directory.
+Unzip the Reactome pathway graphlets file `reactomeGraphlets.zip` before running the example script.
+
 ## Graphlet Creation
 
-Graphlet decomposition files are created with  the [Parallel Graphlet Decomposition library](http://nesreenahmed.com/graphlets/). Files are the piped output from the pgd script: `./pgd inputGraphFile >> graphletOutputFile.gOut`.
+Graphlet decomposition files are created with  the [Parallel Graphlet Decomposition library](http://nesreenahmed.com/graphlets/).
+Files are the piped output from the pgd script: `./pgd inputGraphFile >> graphletOutputFile.gOut`.
