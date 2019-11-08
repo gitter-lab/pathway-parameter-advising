@@ -12,3 +12,5 @@ script:
   - unzip -q referencePathways/reactome/reactomeGraphlets.zip -d referencePathways/reactome
   - cd scripts
   - bash runNetBoxIL2.sh
+  # Compare the generated IL2 output with the reference output
+  - cmp ../tests/reference/il2_ranking.txt il2_ranking.txt
