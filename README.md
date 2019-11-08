@@ -32,10 +32,16 @@ Arguments:
 >  --verbose             If set, will print intermediate status updates. Optional, default = False.
 
 ## Example
+`scripts/runPPA.sh` runs pathway parameter advising on any set of sif or edgelist networks.
+It will attempt to install the pgd library and setup the reactome pathway graphlets automatically. 
+The following commands will run `runPPA.sh` with the included `Wnt` and `Prolactin` datasets from the `scripts` directory:
+> `bash runPPA.sh ../data/Wnt wnt_ranking.txt`
+> `bash runPPa.sh ../data/Prolactin prolactin_ranking.txt`
 
 `scripts/runNetBoxIL2.sh` runs pathway parameter advising for the precomputed graphlet files for NetBox IL2 pathways using Reactome reference pathways.
 It must be run from the `scripts` directory.
 Unzip the Reactome pathway graphlets file `reactomeGraphlets.zip` before running the example script.
+
 
 ## Graphlet Creation
 
