@@ -16,5 +16,8 @@ mkdir ${homeDir}/lib/pgd;
 git clone https://github.com/nkahmed/PGD.git ${homeDir}/lib/pgd/;
 make -C ${homeDir}/lib/pgd/;
 
+ls -l
+ls -l ${homeDir}/lib/pgd/
+
 #Test run without saving any output
 ${homeDir}/lib/pgd/pgd -f ${homeDir}/data/IL2/p5e-2.sif;
