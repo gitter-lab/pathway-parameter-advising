@@ -20,4 +20,6 @@ ls -l
 ls -l ${homeDir}/lib/pgd/
 
 #Test run without saving any output
-${homeDir}/lib/pgd/pgd -f ${homeDir}/data/IL2/p5e-2.sif;
+python ${homeDir}/scripts/makePGDNet.py ${homeDir}/data/IL2/pathways/p5e-2.sif;
+${homeDir}/lib/pgd/pgd -f ${homeDir}/data/IL2/graphlets/p5e-2.sif;
+rm ${homeDir}/data/IL2/graphlets/p5e-2.sif;
