@@ -16,9 +16,6 @@ mkdir ${homeDir}/lib/pgd;
 git clone https://github.com/nkahmed/PGD.git ${homeDir}/lib/pgd/;
 make -C ${homeDir}/lib/pgd/;
 
-ls -l
-ls -l ${homeDir}/lib/pgd/
-
 #Test run without saving any output
 python ${homeDir}/scripts/makePGDNet.py ${homeDir}/data/IL2/pathways/p5e-2.sif;
 ${homeDir}/lib/pgd/pgd -f ${homeDir}/data/IL2/graphlets/p5e-2.sif;
