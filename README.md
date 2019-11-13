@@ -39,7 +39,7 @@ The following commands will run `runPPA.sh` with the included `Wnt` and `Prolact
 
 > `bash runPPA.sh ../data/Wnt wnt_ranking.txt`
 >
-> `bash runPPa.sh ../data/Prolactin prolactin_ranking.txt`
+> `bash runPPA.sh ../data/Prolactin prolactin_ranking.txt`
 
 `scripts/runNetBoxIL2.sh` runs pathway parameter advising for the precomputed graphlet files for NetBox IL2 pathways using Reactome reference pathways.
 It must be run from the `scripts` directory.
@@ -47,6 +47,8 @@ Unzip the Reactome pathway graphlets file `reactomeGraphlets.zip` before running
 
 
 ## Graphlet Creation
-
 Graphlet decomposition files are created with  the [Parallel Graphlet Decomposition library](http://nesreenahmed.com/graphlets/).
-Files are the piped output from the pgd script: `./pgd inputGraphFile >> graphletOutputFile.gOut`.
+Files are the piped output from the pgd script: `./pgd -f inputGraphFile >> graphletOutputFile.gOut`.
+
+`scripts/setupPGD.sh` installs the PGD library into the `lib` directory, which is created if none exists. PGD is cloned from its [github repository](https://github.com/nkahmed/pgd) and complied using `make`. It can then be run from the base pathway-parameter-advising directory as `lib/pgd/pgd -f inputGraphFile`.
+
