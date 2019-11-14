@@ -27,7 +27,7 @@ delim=$4;
 homeDir=`git rev-parse --show-toplevel`;
 
 #Unzip reference pathways if needed
-if [ "`ls ${homeDir}/referencePathways/reactome/*.gOut | wc -l`" -lt 1416 ];
+if [[ ! -f "${homeDir}/referencePathways/reactome/R-HSA-109688.gOut" || "`ls ${homeDir}/referencePathways/reactome/*.gOut | wc -l`" -lt 1416 ]];
 then
     unzip ${homeDir}/referencePathways/reactome/reactomeGraphlets.zip -d ${homeDir}/referencePathways/reactome/
 fi
