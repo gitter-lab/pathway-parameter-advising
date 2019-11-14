@@ -8,10 +8,10 @@ cache:
   - pip
 install:
   - pip install networkx numpy
-  - bash scripts/setupPGD.sh
 script:
-  - unzip -q referencePathways/reactome/reactomeGraphlets.zip -d referencePathways/reactome
   - cd scripts
+  # Installs pgd, uses graph conversion script, and runs PPA
+  - bash runPPA.sh ../data/Wnt wnt_ranking.txt
   - bash runNetBoxIL2.sh
   # Compare the generated IL2 output with the reference output
   - cmp ../tests/reference/il2_ranking.txt il2_ranking.txt

@@ -5,7 +5,7 @@ Parameter advising for biological pathway creation algorithms.
 
 ## Dependencies
 
-Pathway parameter advising was written and tested using Python 3.6 and requires the packages `networkx` and `numpy`. 
+Pathway parameter advising was written and tested using Python 3.6 and requires the packages `networkx` and `numpy`. The `runPPA.sh` and `setupPGD.sh` scripts require git.
 
 ## Usage
 

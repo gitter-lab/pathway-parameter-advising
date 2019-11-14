@@ -27,10 +27,9 @@ delim=$4;
 homeDir=`git rev-parse --show-toplevel`;
 
 #Unzip reference pathways if needed
-if [ -f "${homeDir}/referencePathways/reactome/reactomeGraphlets.zip"  ];
+if [ "`ls ${homeDir}/referencePathways/reactome/*.gOut | wc -l`" -lt 1416 ];
 then
     unzip ${homeDir}/referencePathways/reactome/reactomeGraphlets.zip -d ${homeDir}/referencePathways/reactome/
-    rm ${homeDir}/referencePathways/reactome/reactomeGraphlets.zip
 fi
 
 #Convert networks for PGD
@@ -60,10 +59,10 @@ do
 done;
 
 #Collect graphletNames into a text file
-rm ${dataDir}/graphletNames.txt;
+rm -f ${dataDir}/graphletNames.txt;
 ls ${dataDir}/graphlets/*.gOut >> ${dataDir}/graphletNames.txt;
 
-rm ${homeDir}/referencePathways/reactomeGraphlets.txt;
+rm -f ${homeDir}/referencePathways/reactomeGraphlets.txt;
 ls ${homeDir}/referencePathways/reactome/*.gOut >> ${homeDir}/referencePathways/reactomeGraphlets.txt;
 
 #Run PPA
