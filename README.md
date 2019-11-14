@@ -5,7 +5,9 @@ Parameter advising for biological pathway creation algorithms.
 
 ## Dependencies
 
-Pathway parameter advising was written and tested using Python 3.6 and requires the packages `networkx` and `numpy`. The `runPPA.sh` and `setupPGD.sh` scripts require git.
+Pathway parameter advising was written and tested using Python 3.6 and requires the packages `networkx` and `numpy`.
+The `runPPA.sh` and `setupPGD.sh` scripts require git.
+These scripts have only been tested in a Linux environment initially.
 
 ## Usage
 
@@ -50,5 +52,6 @@ Unzip the Reactome pathway graphlets file `reactomeGraphlets.zip` before running
 Graphlet decomposition files are created with  the [Parallel Graphlet Decomposition library](http://nesreenahmed.com/graphlets/).
 Files are the piped output from the pgd script: `./pgd -f inputGraphFile >> graphletOutputFile.gOut`.
 
-`scripts/setupPGD.sh` installs the PGD library into the `lib` directory, which is created if none exists. PGD is cloned from its [github repository](https://github.com/nkahmed/pgd) and complied using `make`. It can then be run from the base pathway-parameter-advising directory as `lib/pgd/pgd -f inputGraphFile`.
-
+`scripts/setupPGD.sh` installs the PGD library into the `lib` directory, which is created if none exists.
+PGD is cloned from its [github repository](https://github.com/nkahmed/pgd) and complied using `make`.
+It can then be run from the base pathway-parameter-advising directory as `lib/pgd/pgd -f inputGraphFile`.
