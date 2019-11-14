@@ -29,7 +29,7 @@ homeDir=`git rev-parse --show-toplevel`;
 #Unzip reference pathways if needed
 if [[ ! -f "${homeDir}/referencePathways/reactome/R-HSA-109688.gOut" || "`ls ${homeDir}/referencePathways/reactome/*.gOut | wc -l`" -lt 1416 ]];
 then
-    unzip ${homeDir}/referencePathways/reactome/reactomeGraphlets.zip -d ${homeDir}/referencePathways/reactome/
+    unzip -q ${homeDir}/referencePathways/reactome/reactomeGraphlets.zip -d ${homeDir}/referencePathways/reactome/
 fi
 
 #Convert networks for PGD
