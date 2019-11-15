@@ -11,9 +11,9 @@ Description: This short script converts networks into a numbered edgelist for us
 """
 def main():
     #Parse Arguments
-    parser = argparse.ArgumentParser(description="This script converts a sif or edgelist network file into a format interpretable by the pgd library. Released under the MIT license")
-    parser.add_argument("networkFile", help="Network sif or edgelist network file to be converted to a format interpretable by pgd. Must be in format readable by networkx.read_edgelist")
-    parser.add_argument("--delim", help="Node delimiter in network file to be passed to the \"delimiter\" argument in networkx.read_edgelist. Default is none.", default="")
+    parser = argparse.ArgumentParser(description="This script converts a sif or edgelist network file into a format interpretable by the pgd library. The network will be converted to be undirected and have sequential integer node names. Released under the MIT license")
+    parser.add_argument("networkFile", help="Network sif or edgelist network file to be converted to a format interpretable by pgd. Must be in format readable by networkx.read_edgelist and have at least 4 nodes.")
+    parser.add_argument("--delim", help="Node delimiter in network file to be passed to the \"delimiter\" argument in networkx.read_edgelist. Default is none, which will use the default whitespace delimeter in networkx.read_edgelist.", default="")
     parser.add_argument("--outFile", help="File to store formatted network in. Default is to store the network as NETWORKFILE in a new directory named graphlets.", default="")
     args = parser.parse_args()
     networkFile = args.networkFile
@@ -34,7 +34,7 @@ def main():
         pathway = nx.read_edgelist(networkFile.strip(), delimiter=delim)
     pathway = pathway.to_undirected()
     if len(pathway) < 4:
-        print(networkFile, "too short at ",len(pathway))
+        print(networkFile, "too short at ",len(pathway),". Network must contain at least 4 nodes.")
         return
 
     #Write Output
