@@ -3,6 +3,14 @@
 
 Parameter advising for biological pathway creation algorithms.
 
+## Citation
+
+Pathway parameter advising is described in the following preprint:
+
+[Automating parameter selection to avoid implausible biological pathway models](https://doi.org/10.1101/845834).
+Chris S Magnano, Anthony Gitter.
+*bioRxiv* 2019. doi:10.1101/845834
+
 ## Dependencies
 
 Pathway parameter advising was written and tested using Python 3.6 and requires the packages `networkx` and `numpy`.
