@@ -53,8 +53,9 @@ then
 fi;
 
 #Run PGD
-for pgdNet in `ls ${dataDir}/graphlets/* | grep -v \'\.gOut$\'`;
+for pgdNet in `ls ${dataDir}/graphlets/* | grep -v '\.gOut$'`;
 do
+    echo $pgdNet;
     ${pgdDir}/pgd -f $pgdNet >> ${pgdNet%.*}.gOut;
 done;
 

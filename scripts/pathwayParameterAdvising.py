@@ -120,7 +120,7 @@ def saveOutput(distances,outFN,outMax,outScore,verbose):
         outF.write("Run\tScore\n")
     else:
         outF.write("Run\n")
-    for run in sorted(distances, key=distances.get):
+    for run in sorted(distances, key = lambda x:(distances[x], x)):
         if outScore:
             score = distances[run]
             outF.write("%s\t%0.4f\n" %(run, score))
