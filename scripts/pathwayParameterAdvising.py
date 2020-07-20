@@ -2,6 +2,7 @@ import os
 import argparse
 import numpy as np
 import sys
+import pickle as pkl
 __version__ = "0.1.0"
 
 """
@@ -16,13 +17,14 @@ It then ranks the generated pathways by their similarity to the reference pathwa
 def main():
     #Handle command line arguments
     parser = argparse.ArgumentParser(description="The pathway parameter advisor creates a ranking of pathways based on their topological distance to a set of reference pathways. Version %s, released under the MIT license."%(__version__))
-    parser.add_argument("--genPathwayGraphlets", help="File where each line is a graphlets file of a generated pathway.",required=True)
-    parser.add_argument("--refPathwayGraphlets", help="File where each line is a graphlets file of a reference pathway.",required=True)
+    parser.add_argument("--genPathwayGraphlets", help="File where each line is a graphlets file of a generated pathway, or a pickled dictionary of precomputed reference graphlet distributions",required=True)
+    parser.add_argument("--refPathwayGraphlets", help="File where each line is a graphlets file of a reference pathway, or a pickled dictionary of precomputed reference graphlet distributions.",required=True)
     parser.add_argument("--outFile", default="parameterRanking.txt", help="File to store output in.")
-    parser.add_argument("--minSize", default=15,help="Minimum size a reference pathway must be to be included. Must be integer.")
+    parser.add_argument("--minSize", default=15, help="Minimum size a reference pathway must be to be included. Must be integer.")
     parser.add_argument("--outputMax", action="store_true",help="If set, will return only the top pathway instead of a full ranking.")
     parser.add_argument("--outputScore", action="store_true",help="If set, will return scores in addition to pathway rankings.")
     parser.add_argument("--nameMap", default="stripped",help="Either a file mapping generated pathway fileNames to parameter values, \"stripped\" to exclude the directory and extension from the filename, or \"fileName\" to use raw file names.")
+    parser.add_argument("--saveGraphlets", action="store_true",help="If set, will save graphlet distributions as pickled dictionaries.")
     parser.add_argument("--verbose", action="store_true",help="If set, will print intermediate status updates.")
 
     args = parser.parse_args()
@@ -34,7 +36,12 @@ def main():
     outScore = args.outputScore
     verbose = args.verbose
     nameMap = args.nameMap
+    saveGraphlets = args.saveGraphlets
     percTopCompute = 0.2
+
+    #Secondary argument checking due to some explicity empty strings passed in by scripts
+    if len(outF)==0:
+        outF="parameterRanking.txt"
 
     print("Running pathway parameter advising with generated pathways at %s and reference pathways at %s" %(genPathsF,refPathsF))
     if verbose:
@@ -45,6 +52,22 @@ def main():
         print("Command line arguments parsed, loading graphlets...")
     refPathsG = loadGraphlets(refPathsF,minSize,verbose)
     genPathsG = loadGraphlets(genPathsF,0,verbose)
+    if saveGraphlets:
+        if verbose:
+            print("Saving loaded graphlet distributions as pickled dictionaries.")
+        refPathsPklF = os.path.splitext(refPathsF)[0]+".pkl"
+        refPathsPkl = open(refPathsPklF,"wb")
+        pkl.dump(refPathsG,refPathsPkl)
+        refPathsPkl.close()
+        if verbose:
+            print("Sucessfully saved %s." %(refPathsPklF))
+        genPathsPklF = os.path.splitext(genPathsF)[0]+".pkl"
+        genPathsPkl = open(genPathsPklF,"wb")
+        pkl.dump(genPathsG,genPathsPkl)
+        genPathsPkl.close()
+        if verbose:
+            print("Sucessfully saved %s." %(genPathsPklF))
+
 
     if len(refPathsG)==0:
         print("Error: Must include at least 1 reference pathway.")
@@ -170,6 +193,18 @@ Loads all graphlet freqs and stores as ready to go distributions
 """
 def loadGraphlets(allGraphsF,minSize,verbose):
     allGDists = dict()
+
+    #Check if allGraphsF is a pickled dictionary
+    try:
+        allGraphsPickle = open(allGraphsF, "rb")
+        allGDists = pkl.load(allGraphsPickle)
+        allGraphsPickle.close()
+        if verbose:
+            print("Successfully loaded %d graphlet distributions from pickle file %s." %(len(allGDists), allGraphsF))
+        return allGDists
+    except pkl.UnpicklingError:
+        allGraphsPickle.close()
+
     skipCount = 0
     for line in open(allGraphsF):
         graphlets = loadSingleGFD(line.strip(),minSize,verbose)
@@ -182,7 +217,6 @@ def loadGraphlets(allGraphsF,minSize,verbose):
         print("Skipped %d reference pathways for being too small." %(skipCount))
 
     return allGDists
-
 
 """
 Loads a graphlet freq dist from output file
@@ -200,8 +234,8 @@ def loadSingleGFD(name,minSize,verbose):
 
             if outDict["size"]<minSize:
                 if verbose:
+                    print("Skipping "+name+" with size",outDict["size"])
                     pass
-                    #print("Skipping "+name+" with size",outDict["size"])
                 return dict()
 
         if not inGFD:
