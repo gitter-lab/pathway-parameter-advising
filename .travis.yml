@@ -1,7 +1,4 @@
 language: python
-os:
-  - linux
-  - osx
 python:
   - "3.6"
 # Only test on Python 3.6 initially
