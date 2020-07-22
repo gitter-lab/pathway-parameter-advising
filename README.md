@@ -14,7 +14,11 @@ Chris S Magnano, Anthony Gitter.
 ## Dependencies
 
 Pathway parameter advising was written and tested using Python 3.6 and requires the packages `networkx` and `numpy`.
-The `runPPA.sh` and `setupPGD.sh` scripts require git.
+
+Graphlet decomposition is performed using the PGD library.
+The PGD library can be installed from its [github repository](https://github.com/nkahmed/pgd) and complied using `make`.
+The script `setupPGD.sh` requires git, and has been provided to aid in installing the PGD library though it has not been thoroughly tested.
+
 These scripts have only been tested in a Linux environment initially.
 
 ## Usage
@@ -43,7 +47,7 @@ Arguments:
 
 ## Example
 
-`scripts/runPPA.sh` runs pathway parameter advising on any set of sif or edgelist networks.
+`bin/runPPA.sh` runs pathway parameter advising on any set of sif or edgelist networks.
 It will attempt to install the pgd library and setup the reactome pathway graphlets automatically. 
 The following commands will run `runPPA.sh` with the included `Wnt` and `Prolactin` datasets from the `scripts` directory:
 
@@ -51,7 +55,7 @@ The following commands will run `runPPA.sh` with the included `Wnt` and `Prolact
 >
 > `bash runPPA.sh ../data/Prolactin prolactin_ranking.txt`
 
-`scripts/runNetBoxIL2.sh` runs pathway parameter advising for the precomputed graphlet files for NetBox IL2 pathways using Reactome reference pathways.
+`bin/runNetBoxIL2.sh` runs pathway parameter advising for the precomputed graphlet files for NetBox IL2 pathways using Reactome reference pathways.
 It must be run from the `scripts` directory.
 Unzip the Reactome pathway graphlets file `reactomeGraphlets.zip` before running the example script.
 
@@ -60,6 +64,7 @@ Unzip the Reactome pathway graphlets file `reactomeGraphlets.zip` before running
 Graphlet decomposition files are created with  the [Parallel Graphlet Decomposition library](http://nesreenahmed.com/graphlets/).
 Files are the piped output from the pgd script: `./pgd -f inputGraphFile >> graphletOutputFile.gOut`.
 
-`scripts/setupPGD.sh` installs the PGD library into the `lib` directory, which is created if none exists.
+`bin/setupPGD.sh` installs the PGD library into the `lib` directory, which is created if none exists.
 PGD is cloned from its [github repository](https://github.com/nkahmed/pgd) and complied using `make`.
 It can then be run from the base pathway-parameter-advising directory as `lib/pgd/pgd -f inputGraphFile`.
+Please note this this script has been included to help install the PGD library, but is not rigorously tested.

@@ -17,20 +17,31 @@ import requests
 import time
 import json
 import os
+import argparse
 import networkx as nx
+__version__= "0.1.0"
 
-def main():
-    outDir = sys.argv[1]
-    names = getPathwayNames()
-    print("Found %d pathways." %(len(names)))
+"""
+Method to call which downloads all pathways from source database (default is reactome)
+in Pathway Commons and saves them in outDir.
+"""
+def updateReactome(outDir,source="reactome"):
+    names = getAllPathwayNames(source)
+    print("Found %d pathways from %s in Pathway Commons." %(len(names),source))
+    allPaths, delList = getPathwayFiles(names,source)
+    saveReactomeOutput(allPaths, outDir, delList)
 
-    allPaths, delList =getPathwayFiles(names)
-    allData={"allPaths":allPaths,"delList":delList}
-    saveOutput(allPaths, outDir, delList)
-    return
-
-def saveOutput(allPaths, outDir, delList):
+"""
+Saves pathways in allPaths in 2 formats, raw and as simple integer name
+edge lists for use with PGD. Also attempts to create the directories
+outDir, outDir/pathways, and outDir/graphlets
+"""
+def saveReactomeOutput(allPaths, outDir, delList):
     #Make subdirectories
+    try:
+        os.mkdir(outDir,0o755)
+    except FileExistsError:
+        pass
     try:
         os.mkdir(os.path.join(outDir, "pathways"),0o755)
     except FileExistsError:
@@ -54,17 +65,21 @@ def saveOutput(allPaths, outDir, delList):
         for line in pathLines:
             lineList=line.strip().split()
             eList.append(" ".join([lineList[0],lineList[2]]))
+        pathID = path.split("/")[-1]
         net = nx.parse_edgelist(eList)
         net = nx.convert_node_labels_to_integers(net, first_label=1)
-        nx.write_edgelist(net, os.path.join(outDir,"graphlets",path+".sif"), delimiter="\t", data=False)
+        nx.write_edgelist(net, os.path.join(outDir,"graphlets",pathID+".sif"), delimiter="\t", data=False)
 
         #Save pathways with node names for use in any other analyses
-        pathF = open(os.path.join(outDir,"pathways",path+".sif"),"w")
+        pathF = open(os.path.join(outDir,"pathways",pathID+".sif"),"w")
         pathF.write(allPaths[path])
         pathF.close()
     return
 
-def getPathwayNames(source="reactome"):
+"""
+Gets the identifiers for all pathways from Pathway Commons (default is reactome).
+"""
+def getAllPathwayNames(source="reactome"):
     #Get all reactome (or other source) pathways from pathwaycommons via web API
     allPathNames = []
 
@@ -94,11 +109,11 @@ def getPathwayNames(source="reactome"):
         if len(results)==0:
             pagesLeft=False
         for r in results:
-            name = r["uri"].split("/")[-1]
+            name = r["uri"]
             allPathNames.append(name)
     return allPathNames
 
-def getPathwayFiles(reactomeNames):
+def getPathwayFiles(reactomeNames,source="reactome"):
     allPaths=dict()
 
     #Initialize dictionary
@@ -107,8 +122,7 @@ def getPathwayFiles(reactomeNames):
 
     #Get pathways from pathwaycommons via web API
     reqTxt = "http://www.pathwaycommons.org/pc2/get"
-    reqParams= {"uri":"http://identifiers.org/reactome/","format":"SIF"}
-    idURI="http://identifiers.org/reactome/"
+    reqParams= {"uri":"","format":"SIF"}
     delList = [] #List of errors to skip
 
     i=0
@@ -119,7 +133,7 @@ def getPathwayFiles(reactomeNames):
             print(str(i), end="", flush=True)
         else:
             print(".", end="", flush=True)
-        reqParams["uri"] = idURI+path
+        reqParams["uri"] = path
 
         #Pathway commons reccomends using post, download can be slow so wait up to 10 minutes
         try:
@@ -136,4 +150,13 @@ def getPathwayFiles(reactomeNames):
         #Annoying, but needed to prevent a IP address ban.
         time.sleep(0.2)
     return allPaths, delList
-main()
+
+if __name__ == "__main__":
+    parser = argparse.ArgumentParser(description="As a script, this file downloads the latest version of all human Reactome pathways from Pathway Commons and prepares them for graphlet decomposition using the PGD library. Version %s, released under the MIT license."%(__version__))
+    parser.add_argument("--outputDirectory", default="referencePathways", help="Directory where reactome pathways will be stored. Two subdirectories will be created, to hold raw pathways and pathways ready for graphlet decomposition.")
+    parser.add_argument("--source", default="reactome", help="Source database in Pathway Commons to get pathways from. See https://www.pathwaycommons.org/pc2/datasources for a list of possible data sources.")
+    args = parser.parse_args()
+    outDir = args.outputDirectory
+    source = args.source
+    updateReactome(outDir,source)
+

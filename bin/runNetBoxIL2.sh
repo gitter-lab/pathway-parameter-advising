@@ -7,5 +7,5 @@
 # Must be run within scripts directory.
 #
 #################################################
-python pathwayParameterAdvising.py --genPathwayGraphlets=../data/IL2/graphletNames.txt --refPathwayGraphlets=../referencePathways/reactomeGraphlets.txt --outFile=il2_ranking.txt --minSize=15 --outputScore --verbose
+python ../pathwayParameterAdvising/pathwayParameterAdvising.py --genPathwayGraphlets=../data/IL2/graphletNames.txt --refPathwayGraphlets=../referencePathways/reactomeGraphlets.pkl --outFile=il2_ranking.txt --minSize=15 --outputScore --verbose
 
