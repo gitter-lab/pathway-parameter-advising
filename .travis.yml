@@ -9,7 +9,7 @@ cache:
 install:
   - pip install networkx numpy
 script:
-  - cd scripts
+  - cd bin
   # Installs pgd, uses graph conversion script, and runs PPA
   - bash setupPGD.sh
   - bash runPPA.sh ../data/Wnt wnt_ranking.txt ../lib/pgd/ 
