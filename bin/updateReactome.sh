@@ -26,7 +26,7 @@ fi
 mkdir "${reactDir}";
 
 #This will probably take ~10 minutes
-python ../pathwayParameterAdvisin/getReactomePaths.py ${reactDir};
+python ../pathwayParameterAdvising/getReactomePaths.py --outputDirectory=${reactDir};
 
 #Run PGD
 for pgdNet in `ls ${reactDir}/graphlets/* | grep -v '\.gOut$'`;
@@ -36,8 +36,8 @@ do
 done;
 
 #Collect graphletNames into a text file
-rm -f ${reactDir}/graphletNames.txt;
-ls ${reactDir}/graphlets/*.gOut >> ${reactDir}/graphletDists.txt;
+rm -f ${reactDir}/reactomeGraphlets.txt;
+ls ${reactDir}/graphlets/*.gOut >> ${reactDir}/reactomeGraphlets.txt;
 
 #Create new pickled dictionary to save time and space later
-python ../pathwayParameterAdvising/graphletUtils.py --graphletsFile=${reactDir}/graphletNames.txt --minSize=15;
+python ../pathwayParameterAdvising/graphletUtils.py --graphletsFile=${reactDir}/reactomeGraphlets.txt --minSize=15;

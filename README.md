@@ -22,6 +22,12 @@ However, it is not guaranteed to work and has only been tested on Ubuntu 18.04.
 
 These scripts have only been tested in a Linux environment initially.
 
+## Installation
+
+From the `pathway-parameter-advising` directory, run
+> `python setup.py`
+to install pathway parameter advising. 
+
 ## Usage
 
 The pathway parameter advisor creates a ranking of pathways based on their
@@ -48,15 +54,15 @@ Arguments:
 >
 >  --verbose             If set, will print intermediate status updates. Optional, default = False.
 
-## Example
+## Examples
 
 `bin/runPPA.sh` runs pathway parameter advising on any set of sif or edgelist networks.
 It will attempt to install the pgd library and setup the reactome pathway graphlets automatically. 
-The following commands will run `runPPA.sh` with the included `Wnt` and `Prolactin` datasets from the `scripts` directory:
+The following commands will run `runPPA.sh` with the included `Wnt` and `Prolactin` datasets from the `bin` directory, where `lib/pgd` is installation location of the PGD library:
 
-> `bash runPPA.sh ../data/Wnt wnt_ranking.txt`
+> `bash runPPA.sh ../data/Wnt wnt_ranking.txt ../lib/pgd`
 >
-> `bash runPPA.sh ../data/Prolactin prolactin_ranking.txt`
+> `bash runPPA.sh ../data/Prolactin prolactin_ranking.txt ../lib/pgd`
 
 `bin/runNetBoxIL2.sh` runs pathway parameter advising for the precomputed graphlet files for NetBox IL2 pathways using Reactome reference pathways.
 
