@@ -48,6 +48,7 @@ setuptools.setup(
     install_requires=[
         'numpy',
         'networkx',
+        'requests',
     ],
 
     include_package_data=True,

@@ -13,7 +13,7 @@ Chris S Magnano, Anthony Gitter.
 
 ## Dependencies
 
-Pathway parameter advising was written and tested using Python 3.6 and requires the packages `networkx` and `numpy`.
+Pathway parameter advising was written and tested using Python 3.6 and requires the packages `networkx`, `numpy`, and `requests`.
 
 Graphlet decomposition is performed using the PGD library.
 The PGD library can be installed from its [github repository](https://github.com/nkahmed/pgd) and complied using `make`.

@@ -7,7 +7,7 @@ python:
 cache:
   - pip
 install:
-  - pip install networkx numpy
+  - pip install networkx numpy requests
 script:
   - python setup.py install
   - cd bin
