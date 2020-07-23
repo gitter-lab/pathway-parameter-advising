@@ -3,9 +3,8 @@ import argparse
 import numpy as np
 import sys
 import pickle as pkl
-from graphletUtils import *
-
-__version__ = "0.1.0"
+from pathwayParameterAdvising.graphletUtils import *
+import pathwayParameterAdvising as ppa
 
 """
 Author: Chris Magnano
@@ -97,7 +96,7 @@ def calcGraphletDistance(testG, refGraphlets):
 
 if __name__ == "__main__":
     #Handle command line arguments
-    parser = argparse.ArgumentParser(description="The pathway parameter advisor creates a ranking of pathways based on their topological distance to a set of reference pathways. Version %s, released under the MIT license."%(__version__))
+    parser = argparse.ArgumentParser(description="The pathway parameter advisor creates a ranking of pathways based on their topological distance to a set of reference pathways. Version %s, released under the MIT license."%(ppa.__version__))
     parser.add_argument("--genPathwayGraphlets", help="File where each line is a graphlets file of a generated pathway, or a pickled dictionary of precomputed reference graphlet distributions",required=True)
     parser.add_argument("--refPathwayGraphlets", help="File where each line is a graphlets file of a reference pathway, or a pickled dictionary of precomputed reference graphlet distributions.",required=True)
     parser.add_argument("--outFile", default="parameterRanking.txt", help="File to store output in.")

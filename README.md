@@ -17,7 +17,8 @@ Pathway parameter advising was written and tested using Python 3.6 and requires 
 
 Graphlet decomposition is performed using the PGD library.
 The PGD library can be installed from its [github repository](https://github.com/nkahmed/pgd) and complied using `make`.
-The script `setupPGD.sh` requires git, and has been provided to aid in installing the PGD library though it has not been thoroughly tested.
+The script `setupPGD.sh` requires git, and has been provided to aid in installing the PGD library.
+However, it is not guaranteed to work and has only been tested on Ubuntu 18.04.
 
 These scripts have only been tested in a Linux environment initially.
 
@@ -43,6 +44,8 @@ Arguments:
 >
 >  --nameMap NAMEMAP     Either a file mapping generated pathway fileNames to parameter values, "stripped" to exclude the directory and extension from the filename, or "fileName" to use raw file names. Optional, default = stripped.
 >
+>  --saveGraphlets       If set, will save graphlet distributions as pickled dictionaries.
+>
 >  --verbose             If set, will print intermediate status updates. Optional, default = False.
 
 ## Example
@@ -56,15 +59,17 @@ The following commands will run `runPPA.sh` with the included `Wnt` and `Prolact
 > `bash runPPA.sh ../data/Prolactin prolactin_ranking.txt`
 
 `bin/runNetBoxIL2.sh` runs pathway parameter advising for the precomputed graphlet files for NetBox IL2 pathways using Reactome reference pathways.
-It must be run from the `scripts` directory.
-Unzip the Reactome pathway graphlets file `reactomeGraphlets.zip` before running the example script.
+
+These scripts must be run from the `bin` directory.
 
 
 ## Graphlet Creation
 Graphlet decomposition files are created with  the [Parallel Graphlet Decomposition library](http://nesreenahmed.com/graphlets/).
 Files are the piped output from the pgd script: `./pgd -f inputGraphFile >> graphletOutputFile.gOut`.
 
+## Other Scripts
 `bin/setupPGD.sh` installs the PGD library into the `lib` directory, which is created if none exists.
 PGD is cloned from its [github repository](https://github.com/nkahmed/pgd) and complied using `make`.
 It can then be run from the base pathway-parameter-advising directory as `lib/pgd/pgd -f inputGraphFile`.
-Please note this this script has been included to help install the PGD library, but is not rigorously tested.
+
+`bin/updateReactome.sh` downloads the latest version of all human reactome pathways from [Pathway Commons](https://www.pathwaycommons.org/) and performs graphlet decomposition on them. Requires the location of the PGD library as a command line argument. 

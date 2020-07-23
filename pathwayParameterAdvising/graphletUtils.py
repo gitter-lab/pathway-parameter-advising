@@ -3,8 +3,7 @@ import argparse
 import numpy as np
 import sys
 import pickle as pkl
-
-__version__ = "0.1.0"
+import pathwayParameterAdvising as ppa
 
 """
 Author: Chris Magnano
@@ -159,7 +158,7 @@ def loadSingleGFD(name,minSize,verbose):
 
 if __name__ == "__main__":
     #Handle command line arguments
-    parser = argparse.ArgumentParser(description="The pathway parameter advisor creates a ranking of pathways based on their topological distance to a set of reference pathways. Version %s, released under the MIT license."%(__version__))
+    parser = argparse.ArgumentParser(description="The pathway parameter advisor creates a ranking of pathways based on their topological distance to a set of reference pathways. Version %s, released under the MIT license."%(ppa.__version__))
     parser.add_argument("--graphletsFile", help="File where each line is a graphlets file of a reference pathway, or a pickled dictionary of precomputed reference graphlet distributions.",required=True)
     parser.add_argument("--minSize", default=15, help="Minimum size a reference pathway must be to be included. Must be integer.")
     parser.add_argument("--verbose", action="store_true",help="If set, will print intermediate status updates.")

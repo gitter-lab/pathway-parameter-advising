@@ -8,7 +8,6 @@
 #################################################
 
 #Get repository directory and set up lib
-homeDir=`git rev-parse --show-toplevel`;
 mkdir ../lib;
 mkdir ../lib/pgd;
 

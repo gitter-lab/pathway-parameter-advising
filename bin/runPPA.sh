@@ -45,5 +45,5 @@ rm -f ${dataDir}/graphletNames.txt;
 ls ${dataDir}/graphlets/*.gOut >> ${dataDir}/graphletNames.txt;
 
 #Run PPA
-python ../pathwayParameterAdvising/pathwayParameterAdvising.py --genPathwayGraphlets=${dataDir}/graphletNames.txt --refPathwayGraphlets=../referencePathways/reactomeGraphlets.pkl --outFile=${outFile} --minSize=15 --outputScore --verbose;
+python ../pathwayParameterAdvising/ppa.py --genPathwayGraphlets=${dataDir}/graphletNames.txt --refPathwayGraphlets=../referencePathways/reactomeGraphlets.pkl --outFile=${outFile} --minSize=15 --outputScore --verbose;
 

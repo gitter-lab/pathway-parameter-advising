@@ -2,6 +2,7 @@ import networkx as nx
 import sys
 import argparse
 import os
+import pathwayParameterAdvising as ppa
 
 """
 Author: Chris Magnano
@@ -35,7 +36,7 @@ def makePGDNet(networkFile,delim,outF):
 
 if __name__ == "__main__":
     #Parse Arguments
-    parser = argparse.ArgumentParser(description="This script converts a sif or edgelist network file into a format interpretable by the pgd library. The network will be converted to be undirected and have sequential integer node names. Released under the MIT license")
+    parser = argparse.ArgumentParser(description="This script converts a sif or edgelist network file into a format interpretable by the pgd library. The network will be converted to be undirected and have sequential integer node names. Version %s, released under the MIT license" %(ppa.__version__))
     parser.add_argument("networkFile", help="Network sif or edgelist network file to be converted to a format interpretable by pgd. Must be in format readable by networkx.read_edgelist and have at least 4 nodes.")
     parser.add_argument("--delim", help="Node delimiter in network file to be passed to the \"delimiter\" argument in networkx.read_edgelist. Default is none, which will use the default whitespace delimeter in networkx.read_edgelist.", default="")
     parser.add_argument("--outFile", help="File to store formatted network in. Default is to store the network as NETWORKFILE in a new directory named graphlets.", default="")

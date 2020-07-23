@@ -19,7 +19,7 @@ import json
 import os
 import argparse
 import networkx as nx
-__version__= "0.1.0"
+import pathwayParameterAdvising as ppa
 
 """
 Method to call which downloads all pathways from source database (default is reactome)
@@ -152,7 +152,7 @@ def getPathwayFiles(reactomeNames,source="reactome"):
     return allPaths, delList
 
 if __name__ == "__main__":
-    parser = argparse.ArgumentParser(description="As a script, this file downloads the latest version of all human Reactome pathways from Pathway Commons and prepares them for graphlet decomposition using the PGD library. Version %s, released under the MIT license."%(__version__))
+    parser = argparse.ArgumentParser(description="As a script, this file downloads the latest version of all human Reactome pathways from Pathway Commons and prepares them for graphlet decomposition using the PGD library. Version %s, released under the MIT license."%(ppa.__version__))
     parser.add_argument("--outputDirectory", default="referencePathways", help="Directory where reactome pathways will be stored. Two subdirectories will be created, to hold raw pathways and pathways ready for graphlet decomposition.")
     parser.add_argument("--source", default="reactome", help="Source database in Pathway Commons to get pathways from. See https://www.pathwaycommons.org/pc2/datasources for a list of possible data sources.")
     args = parser.parse_args()

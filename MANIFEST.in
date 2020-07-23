@@ -1,0 +1,6 @@
+include bin/*
+recursive-include data *.gOut *.txt 
+include data/IL2/pathways/*.sif
+include data/Prolactin/pathways/*.sif
+include data/Wnt/pathways/*.sif
+include referencePathways/reactomeGraphlets.pkl
