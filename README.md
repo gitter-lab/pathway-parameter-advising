@@ -25,12 +25,14 @@ These scripts have only been tested in a Linux environment initially.
 ## Installation
 To download pathway parameter advising using pip, run the command:
 > 'pip download --no-deps --no-binary :all: pathwayParameterAdvising`
+
 And untar the resulting archive file. 
 
 Pathway parameter advising can also be downloaded from [the pathway parameter advising github](https://github.com/gitter-lab/pathway-parameter-advising/tree/reactomeManagement). 
 
 From inside `pathway-parameter-advising` directory, run
 > `python setup.py`
+
 to install pathway parameter advising. 
 
 ## Usage
