@@ -19,8 +19,7 @@ Graphlet decomposition is performed using the PGD library.
 The PGD library can be installed from its [GitHub repository](https://github.com/nkahmed/pgd) and complied using `make`.
 The script `setupPGD.sh` requires git, and has been provided to aid in installing the PGD library.
 However, it is not guaranteed to work and has only been tested on Ubuntu 18.04.
-
-These scripts have only been tested in a Linux environment initially.
+In general, these scripts have only been tested in a Linux environment initially.
 
 ## Installation
 To download pathway parameter advising using pip, run the command:
