@@ -27,7 +27,7 @@ To download pathway parameter advising using pip, run the command:
 
 And untar the resulting archive file. 
 
-Pathway parameter advising can also be downloaded from [the pathway parameter advising github](https://github.com/gitter-lab/pathway-parameter-advising/tree/reactomeManagement). 
+Pathway parameter advising can also be downloaded from [its GitHub repository](https://github.com/gitter-lab/pathway-parameter-advising/). 
 
 From inside `pathway-parameter-advising` directory, run
 > `python setup.py`
