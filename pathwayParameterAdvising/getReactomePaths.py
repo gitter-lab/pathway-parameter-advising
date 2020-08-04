@@ -135,7 +135,7 @@ def getPathwayFiles(reactomeNames,source="reactome"):
             print(".", end="", flush=True)
         reqParams["uri"] = path
 
-        #Pathway commons reccomends using post, download can be slow so wait up to 10 minutes
+        #Pathway commons recommends using post, download can be slow so wait up to 10 minutes
         try:
             r = requests.post(reqTxt,params=reqParams,timeout=600.00)
         except requests.exceptions.RequestException as e:
@@ -159,4 +159,3 @@ if __name__ == "__main__":
     outDir = args.outputDirectory
     source = args.source
     updateReactome(outDir,source)
-
