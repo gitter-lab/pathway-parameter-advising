@@ -106,7 +106,7 @@ The following commands will run `runPPA.sh` with the included `Wnt` and `Prolact
 
 `bin/runNetBoxIL2.sh` runs pathway parameter advising for the precomputed graphlet files for NetBox IL2 pathways using Reactome reference pathways.
 
-These scripts must be run from the `bin` directory.
+These scripts must be run from the `bin` directory, and file path arguments are relative to the `bin` directory.
 
 
 ## Graphlet Creation
