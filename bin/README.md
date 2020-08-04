@@ -8,11 +8,11 @@ Most of these scripts must be run inside the `bin` directory.
 
 `bin/runPPA.sh` runs pathway parameter advising on any set of sif or edgelist networks.
 It will attempt to install the pgd library and setup the reactome pathway graphlets automatically. 
-The following commands will run `runPPA.sh` with the included `Wnt` and `Prolactin` datasets from the `scripts` directory:
+The following commands will run `runPPA.sh` with the included `Wnt` and `Prolactin` datasets from the `scripts` directory, where the third argument is the location of the PGD library:
 
-> `bash runPPA.sh ../data/Wnt wnt_ranking.txt`
+> `bash runPPA.sh ../data/Wnt wnt_ranking.txt ../lib/pgd`
 >
-> `bash runPPA.sh ../data/Prolactin prolactin_ranking.txt`
+> `bash runPPA.sh ../data/Prolactin prolactin_ranking.txt ../lib/pgd`
 
 `bin/runNetBoxIL2.sh` runs pathway parameter advising for the precomputed graphlet files for NetBox IL2 pathways using Reactome reference pathways.
 
@@ -23,4 +23,4 @@ It can then be run from the base pathway-parameter-advising directory as `lib/pg
 Note this this script has been included to help install the PGD library, but is not guaranteed to run on all systems. 
 It has been tested on Ubuntu 18.04. 
 
-`bin/updateReactome.sh` downloads the latest version of all human reactome pathways from [Pathway Commons](https://www.pathwaycommons.org/) and performs graphlet decomposition on them. Requires the location of the PGD library as a command line argument. 
+`bin/updateReactome.sh` downloads the latest version of all human reactome pathways from [Pathway Commons](https://www.pathwaycommons.org/) and performs graphlet decomposition on them. It requires the location of the PGD library as a command line argument. 

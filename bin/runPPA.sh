@@ -12,7 +12,7 @@
 #   dataDirectory: The directory where the networks are stored as sif or edgelist files
 #                  in a subdirectory named 'pathways'. See Wnt and Prolactin for examples.
 #   outFile:       The output filename for the final parameter ranking.
-#   pgdDirectory:  The directory where pgd is installed.
+#   pgdDirectory:  The directory where pgd is installed. Will default to '../lib/pgd'
 #   delim:         (Optional) The limiter used for edges in the input network files. Assumed to be
 #                  whitespace.
 #
@@ -20,7 +20,12 @@
 
 dataDir=$1;
 outFile=$2;
-pgdDir=$3;
+if [ -z "$3" ]
+    then
+        pgdDir="../lib/pgd";
+    else
+        pgdDir=$3;
+fi
 delim=$4;
 
 #Convert networks for PGD

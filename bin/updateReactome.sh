@@ -7,14 +7,19 @@
 # decompition.
 #
 # Usage: bash updateReactome.sh reactomeDirectory pgdDirectory
-#   pgdDirectory:      The directory where pgd is installed.
+#   pgdDirectory:      The directory where pgd is installed. Will default to '../lib/pgd'
 #   reactomeDirectory: (Optional) The directory where reactome pathways and graphlets
 #                      will be stored. If not given will default to
 #                      '../referencePathways'.
 #################################################
 
 #Command line args
-pgdDir=$1;
+if [ -z "$1" ]
+    then
+        pgdDir="../lib/pgd";
+    else
+        pgdDir=$1;
+fi
 
 if [ -z "$2" ]
     then

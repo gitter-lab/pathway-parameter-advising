@@ -22,24 +22,58 @@ However, it is not guaranteed to work and has only been tested on Ubuntu 18.04.
 In general, these scripts have only been tested in a Linux environment initially.
 
 ## Installation
-To download pathway parameter advising using pip, run the command:
+Pathway parameter advising can be download from either PyPi or Github.
+
+This package includes example data and scripts to manage reference pathways and aid in performing graphlet decomposition which are not a part of the binary Python package in PyPi. 
+Therefore, it is reccomended to download the package source.
+
+### PiPy download instructions 
+In order to download all example scripts and data with pathway paramter advising, run `pip` using the following flags:
 > `pip download --no-deps --no-binary :all: pathwayParameterAdvising`
 
-And untar the resulting archive file. 
+This will download a `.tar` file into the current directory. 
+Untar the resulting archive file: 
+> `tar -xf pathwayParameterAdvising-*.tar.gz`
+
+From inside the `pathway-parameter-advising-X.X` directory (where X.X is the current version of pathway paramtere advising), run
+> `python setup.py install`
+
+to install pathway parameter advising. 
+
+### Github download instructions
 
 Pathway parameter advising can also be downloaded from [its GitHub repository](https://github.com/gitter-lab/pathway-parameter-advising/). 
 
-From inside `pathway-parameter-advising` directory, run
-> `python setup.py`
+From inside the `pathway-parameter-advising` directory, run
+> `python setup.py install`
 
 to install pathway parameter advising. 
 
 ## Usage
 
+### Using helper scripts 
+
 The pathway parameter advisor creates a ranking of pathways based on their
 topological distance to a set of reference pathways. 
 
-Arguments:
+The recommended way to use pathway parameter advising is through the script `bin/runPPA.sh`. 
+
+`runPPA.sh` takes the following positional arguments:
+>   dataDirectory: The directory where the networks are stored as sif or edgelist files in a subdirectory named 'pathways'. See Wnt and Prolactin for examples.
+>
+>   outFile:       The output filename for the final parameter ranking.
+>
+>   pgdDirectory:  (Optional) The directory where pgd is installed. Will default to '../lib/pgd'
+>
+>   delim:         (Optional) The limiter used for edges in the input network files. Assumed to be whitespace.
+
+
+### Running Python package directly
+
+Pathway paramter advising can also be run directly as a python script or libary, if different options are desired. 
+
+`ppa.py` can be run as a command line script, or used as a Python package in which case the main entry point is the method `pathwayParameterAdivsing.rankParameters`.
+`ppa.py` takes the following arguments:
 >  -h, --help            show this help message and exit
 >
 >  --genPathwayGraphlets File where each line is a graphlets file of a generated pathway. Required.
