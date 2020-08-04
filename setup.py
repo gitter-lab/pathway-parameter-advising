@@ -19,7 +19,7 @@ setuptools.setup(
     # Package details
     name="pathwayParameterAdvising",
     version=version,
-    description="Parameter advising for biological pathway creation algorithms.",
+    description="Parameter advising for biological pathway reconstruction algorithms.",
     long_description=long_description,
     long_description_content_type="text/markdown",
     url="https://github.com/gitter-lab/pathway-parameter-advising",
