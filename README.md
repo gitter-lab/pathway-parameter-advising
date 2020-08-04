@@ -23,7 +23,7 @@ In general, these scripts have only been tested in a Linux environment initially
 
 ## Installation
 To download pathway parameter advising using pip, run the command:
-> 'pip download --no-deps --no-binary :all: pathwayParameterAdvising`
+> `pip download --no-deps --no-binary :all: pathwayParameterAdvising`
 
 And untar the resulting archive file. 
 
