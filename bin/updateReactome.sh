@@ -23,7 +23,7 @@ if [ -z "$2" ]
         reactDir=$2;
 fi
 
-mkdir "${reactDir}";
+mkdir -p "${reactDir}";
 
 #This will probably take ~10 minutes
 python ../pathwayParameterAdvising/getReactomePaths.py --outputDirectory=${reactDir};
