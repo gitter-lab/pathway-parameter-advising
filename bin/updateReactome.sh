@@ -4,7 +4,7 @@
 # 07/20/2020
 #
 # This script downloads the latest version of reactome and performs graphlet
-# decompition.
+# decomposition.
 #
 # Usage: bash updateReactome.sh reactomeDirectory pgdDirectory
 #   pgdDirectory:      The directory where pgd is installed. Will default to '../lib/pgd'
