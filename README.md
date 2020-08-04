@@ -97,7 +97,6 @@ Pathway paramter advising can also be run directly as a python script or libary,
 ## Examples
 
 `bin/runPPA.sh` runs pathway parameter advising on any set of sif or edgelist networks.
-It will attempt to install the pgd library and setup the reactome pathway graphlets automatically. 
 The following commands will run `runPPA.sh` with the included `Wnt` and `Prolactin` datasets from the `bin` directory, where `../lib/pgd` is installation location of the PGD library:
 
 > `bash runPPA.sh ../data/Wnt wnt_ranking.txt ../lib/pgd`

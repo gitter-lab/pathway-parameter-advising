@@ -7,7 +7,6 @@ Most of these scripts must be run inside the `bin` directory.
 ## Files
 
 `bin/runPPA.sh` runs pathway parameter advising on any set of sif or edgelist networks.
-It will attempt to install the pgd library and setup the reactome pathway graphlets automatically. 
 The following commands will run `runPPA.sh` with the included `Wnt` and `Prolactin` datasets from the `scripts` directory, where the third argument is the location of the PGD library:
 
 > `bash runPPA.sh ../data/Wnt wnt_ranking.txt ../lib/pgd`
