@@ -6,7 +6,7 @@
 # This script downloads the latest version of reactome and performs graphlet
 # decompition.
 #
-# Usage: bash createNewReactomeGraphlets.sh reactomeDirectory pgdDirectory
+# Usage: bash updateReactome.sh reactomeDirectory pgdDirectory
 #   pgdDirectory:      The directory where pgd is installed.
 #   reactomeDirectory: (Optional) The directory where reactome pathways and graphlets
 #                      will be stored. If not given will default to
