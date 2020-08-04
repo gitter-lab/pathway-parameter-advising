@@ -114,7 +114,7 @@ Graphlet decomposition files are created with  the [Parallel Graphlet Decomposit
 Files are the piped output from the pgd script: `./pgd -f inputGraphFile >> graphletOutputFile.gOut`.
 
 ## Other Scripts
-`bin/setupPGD.sh` installs the PGD library into the `lib` directory, which is created if none exists.
+`bin/setupPGD.sh` installs the PGD library into the `lib` directory, which is created if it does not exist.
 PGD is cloned from its [github repository](https://github.com/nkahmed/pgd) and complied using `make`.
 It can then be run from the base pathway-parameter-advising directory as `lib/pgd/pgd -f inputGraphFile`.
 
