@@ -91,7 +91,7 @@ def getAllPathwayNames(source="reactome"):
     while pagesLeft:
         reqParams["page"]=str(currentPage)
         try:
-            #Pathway commons reccomends using post, download can be slow so wait up to 10 minutes
+            #Pathway commons recommends using post, download can be slow so wait up to 10 minutes
             r = requests.post(reqTxt,params=reqParams,timeout=600.00)
         except requests.exceptions.RequestException as e:
             print("Got exception ",e)
