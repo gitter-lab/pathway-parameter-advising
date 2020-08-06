@@ -9,7 +9,7 @@ import pathwayParameterAdvising as ppa
 Author: Chris Magnano
 Created: 07/21/2020
 
-Description: This file contains utilities realated to file input and output, and loading
+Description: This file contains utilities related to file input and output, and loading
 of graphlet output files.
 
 When run as a script this file will create a pickled dictionary of graphlet distributions

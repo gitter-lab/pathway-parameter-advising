@@ -25,17 +25,17 @@ In general, these scripts have only been tested in a Linux environment initially
 Pathway parameter advising can be download from either PyPi or Github.
 
 This package includes example data and scripts to manage reference pathways and aid in performing graphlet decomposition which are not a part of the binary Python package in PyPi. 
-Therefore, it is reccomended to download the package source.
+Therefore, it is recommended to download the package source.
 
 ### PiPy download instructions 
-In order to download all example scripts and data with pathway paramter advising, run `pip` using the following flags:
+In order to download all example scripts and data with pathway parameter advising, run `pip` using the following flags:
 > `pip download --no-deps --no-binary :all: pathwayParameterAdvising`
 
 This will download a `.tar` file into the current directory. 
 Untar the resulting archive file: 
 > `tar -xf pathwayParameterAdvising-*.tar.gz`
 
-From inside the `pathway-parameter-advising-X.X` directory (where X.X is the current version of pathway paramtere advising), run
+From inside the `pathway-parameter-advising-X.X` directory (where X.X is the current version of pathway parameter advising), run
 > `python setup.py install`
 
 to install pathway parameter advising. 
@@ -59,20 +59,20 @@ topological distance to a set of reference pathways.
 The recommended way to use pathway parameter advising is through the script `bin/runPPA.sh`. 
 
 `runPPA.sh` takes the following positional arguments:
->   `dataDirectory: The directory where the networks are stored as sif or edgelist files in a subdirectory named 'pathways'. See Wnt and Prolactin for examples.`
+>  dataDirectory: The directory where the networks are stored as sif or edgelist files in a subdirectory named 'pathways'. See Wnt and Prolactin for examples.
 >
->  `outFile:       The output filename for the final parameter ranking.`
+>  outFile:       The output filename for the final parameter ranking.
 >
->   `pgdDirectory:  (Optional) The directory where pgd is installed. Will default to '../lib/pgd'`
+>  pgdDirectory:  (Optional) The directory where pgd is installed. Will default to '../lib/pgd'
 >
->   `delim:         (Optional) The limiter used for edges in the input network files. Assumed to be whitespace.`
+>  delim:         (Optional) The limiter used for edges in the input network files. Assumed to be whitespace.
 
 
 ### Running Python package directly
 
-Pathway paramter advising can also be run directly as a python script or libary, if different options are desired. 
+Pathway paramter advising can also be run directly as a python script or library, if different options are desired. 
 
-`ppa.py` can be run as a command line script, or used as a Python package in which case the main entry point is the method `pathwayParameterAdivsing.rankParameters`.
+`ppa.py` can be run as a command line script, or used as a Python package in which case the main entry point is the method `pathwayParameterAdvising.rankParameters`.
 `ppa.py` takes the following arguments:
 >  -h, --help            show this help message and exit
 >
@@ -121,7 +121,8 @@ Note this this script has been included to help install the PGD library, but is 
 It has been tested on Ubuntu 18.04. 
 Positional Arguments: None
 
-`bin/updateReactome.sh` downloads the latest version of all human reactome pathways from [Pathway Commons](https://www.pathwaycommons.org/) and performs graphlet decomposition on them. 
+`bin/updateReactome.sh` downloads the latest version of all human Reactome pathways from [Pathway Commons](https://www.pathwaycommons.org/) and performs graphlet decomposition on them. 
 It takes the following positional Arguments:
->   `pgdDirectory:      The directory where pgd is installed. Will default to '../lib/pgd'`
->   `reactomeDirectory: (Optional) The directory where reactome pathways and graphlets will be stored. If not given will default to '../referencePathways'.`
+>   pgdDirectory:      The directory where pgd is installed. Will default to '../lib/pgd'
+>
+>   reactomeDirectory: (Optional) The directory where Reactome pathways and graphlets will be stored. If not given will default to '../referencePathways'.
