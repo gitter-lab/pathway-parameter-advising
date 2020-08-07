@@ -7,7 +7,7 @@ All of these scripts must be run inside the `bin` directory.
 
 
 ## Files
-`bin/runPPA.sh`
-`bin/runNetBoxIL2.sh`
-`bin/setupPGD.sh` 
-`bin/updateReactome.sh` 
+- `bin/runPPA.sh`
+- `bin/runNetBoxIL2.sh`
+- `bin/setupPGD.sh`
+- `bin/updateReactome.sh`

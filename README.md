@@ -22,12 +22,12 @@ However, it is not guaranteed to work and has only been tested on Ubuntu 18.04.
 In general, these scripts have only been tested in a Linux environment initially.
 
 ## Installation
-Pathway parameter advising can be download from either PyPi or Github.
+Pathway parameter advising can be download from either PyPI or Github.
 
-This package includes example data and scripts to manage reference pathways and aid in performing graphlet decomposition which are not a part of the binary Python package in PyPi. 
+This package includes example data and scripts to manage reference pathways and aid in performing graphlet decomposition which are not a part of the binary Python package in PyPI.
 Therefore, it is recommended to download the package source.
 
-### PiPy download instructions 
+### PyPI download instructions
 In order to download all example scripts and data with pathway parameter advising, run `pip` using the following flags:
 > `pip download --no-deps --no-binary :all: pathwayParameterAdvising`
 
@@ -40,7 +40,7 @@ From inside the `pathway-parameter-advising-X.X` directory (where X.X is the cur
 
 to install pathway parameter advising. 
 
-### Github download instructions
+### GitHub download instructions
 
 Pathway parameter advising can also be downloaded from [its GitHub repository](https://github.com/gitter-lab/pathway-parameter-advising/). 
 
@@ -70,9 +70,9 @@ The recommended way to use pathway parameter advising is through the script `bin
 
 ### Running Python package directly
 
-Pathway paramter advising can also be run directly as a python script or library, if different options are desired. 
+Pathway parameter advising can also be run directly as a Python script or library, if different options are desired.
 
-`ppa.py` can be run as a command line script, or used as a Python package in which case the main entry point is the method `pathwayParameterAdvising.rankParameters`.
+`pathwayParameterAdvising/ppa.py` can be run as a command line script, or used as a Python package in which case the main entry point is the method `pathwayParameterAdvising.rankParameters`.
 `ppa.py` takes the following arguments:
 >  -h, --help            show this help message and exit
 >
@@ -109,20 +109,20 @@ It has no arguments.
 These scripts must be run from the `bin` directory, and file path arguments are relative to the `bin` directory.
 
 
-## Graphlet Creation
-Graphlet decomposition files are created with  the [Parallel Graphlet Decomposition library](http://nesreenahmed.com/graphlets/).
+## Graphlet creation
+Graphlet decomposition files are created with the [Parallel Graphlet Decomposition library](http://nesreenahmed.com/graphlets/).
 Files are the piped output from the pgd script: `./pgd -f inputGraphFile >> graphletOutputFile.gOut`.
 
-## Other Scripts
+## Other scripts
 `bin/setupPGD.sh` installs the PGD library into the `lib` directory, which is created if it does not exist.
-PGD is cloned from its [github repository](https://github.com/nkahmed/pgd) and complied using `make`.
-It can then be run from the base pathway-parameter-advising directory as `lib/pgd/pgd -f inputGraphFile`.
-Note this this script has been included to help install the PGD library, but is not guaranteed to run on all systems. 
-It has been tested on Ubuntu 18.04. 
-Positional Arguments: None
+PGD is cloned from its [GitHub repository](https://github.com/nkahmed/pgd) and complied using `make`.
+It can then be run from the base pathway parameter advising directory as `lib/pgd/pgd -f inputGraphFile`.
+Note this script has been included to help install the PGD library, but is not guaranteed to run on all systems.
+It has been tested on Ubuntu 18.04.
+`setupPGD.sh` does not take any arguments.
 
 `bin/updateReactome.sh` downloads the latest version of all human Reactome pathways from [Pathway Commons](https://www.pathwaycommons.org/) and performs graphlet decomposition on them. 
-It takes the following positional Arguments:
+It takes the following positional arguments:
 >   pgdDirectory:      The directory where pgd is installed. Will default to '../lib/pgd'
 >
 >   reactomeDirectory: (Optional) The directory where Reactome pathways and graphlets will be stored. If not given will default to '../referencePathways'.

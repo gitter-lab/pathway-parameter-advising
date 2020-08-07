@@ -12,8 +12,8 @@
 #   dataDirectory: The directory where the networks are stored as sif or edgelist files
 #                  in a subdirectory named 'pathways'. See Wnt and Prolactin for examples.
 #   outFile:       The output filename for the final parameter ranking.
-#   pgdDirectory:  The directory where pgd is installed. Will default to '../lib/pgd'
-#   delim:         (Optional) The limiter used for edges in the input network files. Assumed to be
+#   pgdDirectory:  (Optional) The directory where pgd is installed. Will default to '../lib/pgd'
+#   delim:         (Optional) The delimiter used for edges in the input network files. Assumed to be
 #                  whitespace.
 #
 #################################################
