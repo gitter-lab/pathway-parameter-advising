@@ -31,9 +31,9 @@ install:
   # See https://docs.travis-ci.com/user/languages/c/#gcc-on-macos
   - |
     if [[ "$TRAVIS_OS_NAME" == "osx" ]]; then
-      brew install gcc@10
-      export CC=gcc-10
-      export CXX=g++-10
+      brew install gcc5
+      export CC=gcc-5
+      export CXX=g++-5
     fi
   - cd bin
   - bash setupPGD.sh
