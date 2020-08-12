@@ -31,7 +31,7 @@ install:
   # See https://docs.travis-ci.com/user/languages/c/#gcc-on-macos
   - |
     if [[ "$TRAVIS_OS_NAME" == "osx" ]]; then
-      brew install gcc10
+      brew install gcc@10
       export CC=gcc-10
       export CXX=g++-10
     fi
