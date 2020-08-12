@@ -7,9 +7,10 @@
 # in the lib directory. The lib directory is made if none exists.
 #################################################
 
+set -o errexit
+
 #Get repository directory and set up lib
-mkdir ../lib;
-mkdir ../lib/pgd;
+mkdir -p ../lib/pgd;
 
 #Get PGD from github and compile it
 #git clone https://github.com/nkahmed/PGD.git ${homeDir}/lib/pgd/;

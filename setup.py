@@ -30,7 +30,7 @@ setuptools.setup(
 
 
     #Package Topics
-    keywords = "pathway-finding parameter-advising pathway-reconstruction biological-pathway",
+    keywords = "pathway-finding parameter-advising pathway-reconstruction biological-pathway graphlet",
     classifiers=[
         'Development Status :: 4 - Beta',
         'Intended Audience :: Science/Research',
