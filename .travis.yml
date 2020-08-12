@@ -27,6 +27,14 @@ install:
   # Install pathway parameter advising
   - python setup.py install
   # Install PGD dependency
+  # macOS has gcc as an alias for clang, so specifically set gcc
+  # See https://docs.travis-ci.com/user/languages/c/#gcc-on-macos
+  - |
+    if [[ "$TRAVIS_OS_NAME" == "osx" ]]; then
+      brew install gcc5
+      CC=gcc-5
+      CXX=g++-5
+    fi
   - cd bin
   - bash setupPGD.sh
 
