@@ -32,8 +32,12 @@ install:
   - |
     if [[ "$TRAVIS_OS_NAME" == "osx" ]]; then
       brew install gcc5
-      CC=gcc-5
-      CXX=g++-5
+      export CC=gcc-5
+      export CXX=g++-5
+      g++ --version
+      cmake --version
+      which g++
+      which g++-5
     fi
   - cd bin
   - bash setupPGD.sh
