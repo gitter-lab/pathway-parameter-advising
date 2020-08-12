@@ -41,6 +41,7 @@ setuptools.setup(
         'Programming Language :: Python :: 3.6',
         "License :: OSI Approved :: MIT License",
         "Operating System :: Unix ",
+        'Operating System :: MacOS :: MacOS X'
     ],
     python_requires='>=3.6',
     packages=setuptools.find_packages(),
