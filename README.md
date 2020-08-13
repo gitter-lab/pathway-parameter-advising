@@ -143,3 +143,10 @@ It takes the following positional arguments:
 >   pgdDirectory:      The directory where pgd is installed. Will default to '../lib/pgd'
 >
 >   reactomeDirectory: (Optional) The directory where Reactome pathways and graphlets will be stored. If not given will default to '../referencePathways'.
+
+## Pathway reconstruction algorithms
+The pathway reconstruction algorithms used in the pathway parameter advising manuscript are available from:
+- PathLinker: [PathLinker](https://github.com/Murali-group/PathLinker)
+- NetBox: **add source**
+- Prize-Collecting Steiner Forest: [OmicsIntegrator](https://github.com/fraenkel-lab/OmicsIntegrator/) and [msgsteiner](https://staff.polito.it/alfredo.braunstein/code/2010/08/19/msgsteiner.html)
+- Minimum-Cost Flow: [OR-Tools](https://developers.google.com/optimization/install) and **wrapper script**
