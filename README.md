@@ -147,6 +147,6 @@ It takes the following positional arguments:
 ## Pathway reconstruction algorithms
 The pathway reconstruction algorithms used in the pathway parameter advising manuscript are available from:
 - PathLinker: [PathLinker](https://github.com/Murali-group/PathLinker)
-- NetBox: **add source**
+- NetBox: originally used [`netbox.tar.gz`](http://cbio.mskcc.org/wp-content/uploads/2012/10/netbox.tar.gz), which has since been replaced by [NetBoxR](https://www.bioconductor.org/packages/release/bioc/html/netboxr.html)
 - Prize-Collecting Steiner Forest: [OmicsIntegrator](https://github.com/fraenkel-lab/OmicsIntegrator/) and [msgsteiner](https://staff.polito.it/alfredo.braunstein/code/2010/08/19/msgsteiner.html)
 - Minimum-Cost Flow: [OR-Tools](https://developers.google.com/optimization/install) and **wrapper script**
