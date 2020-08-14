@@ -30,7 +30,7 @@ setuptools.setup(
 
 
     #Package Topics
-    keywords = "pathway-finding parameter-advising pathway-reconstruction biological-pathway",
+    keywords = "pathway-finding parameter-advising pathway-reconstruction biological-pathway graphlet",
     classifiers=[
         'Development Status :: 4 - Beta',
         'Intended Audience :: Science/Research',
@@ -41,6 +41,7 @@ setuptools.setup(
         'Programming Language :: Python :: 3.6',
         "License :: OSI Approved :: MIT License",
         "Operating System :: Unix ",
+        'Operating System :: MacOS :: MacOS X'
     ],
     python_requires='>=3.6',
     packages=setuptools.find_packages(),

@@ -18,11 +18,25 @@ Pathway parameter advising was written and tested using Python 3.6 and requires 
 Graphlet decomposition is performed using the PGD library.
 The PGD library can be installed from its [GitHub repository](https://github.com/nkahmed/pgd) and complied using `make`.
 The script `setupPGD.sh` requires git, and has been provided to aid in installing the PGD library.
-However, it is not guaranteed to work and has only been tested on Ubuntu 18.04.
+However, it is not guaranteed to work on all systems and has only been tested on Ubuntu 18.04 and macOS 10.13.
 In general, these scripts have only been tested in a Linux environment initially.
 
+### Compiling PGD for macOS
+Many macOS systems use clang++ instead of g++ and set g++ as an alias for clang++.
+PGD requires g++ instead of clang++.
+Therefore, macOS users must install g++ and set it as the compiler before running the `setupPGD.sh` script.
+
+There are multiple options for installing g++.
+We recommend [Homebrew](https://brew.sh/).
+With Homebrew:
+
+1. Install gcc with the command `brew install gcc`
+2. Define the CC and CXX environmental variables according to the location of brew install. For example:
+- `export CC=/usr/local/Cellar/gcc/10.1.0/bin/gcc-10`
+- `export CXX=/usr/local/Cellar/gcc/10.1.0/bin/g++-10`
+
 ## Installation
-Pathway parameter advising can be download from either PyPI or Github.
+Pathway parameter advising can be download from either PyPI or GitHub.
 
 This package includes example data and scripts to manage reference pathways and aid in performing graphlet decomposition which are not a part of the binary Python package in PyPI.
 Therefore, it is recommended to download the package source.
@@ -67,6 +81,9 @@ The recommended way to use pathway parameter advising is through the script `bin
 >
 >  delim:         (Optional) The limiter used for edges in the input network files. Assumed to be whitespace.
 
+The `runPPA.sh` output is sorted from lowest to highest score.
+This is because the score is a distance from the reference pathways, so the parameter combination with the smallest score is best.
+See the [IL2 output](tests/reference/il2_ranking.txt) as an example.
 
 ### Running Python package directly
 
@@ -118,7 +135,7 @@ Files are the piped output from the pgd script: `./pgd -f inputGraphFile >> grap
 PGD is cloned from its [GitHub repository](https://github.com/nkahmed/pgd) and complied using `make`.
 It can then be run from the base pathway parameter advising directory as `lib/pgd/pgd -f inputGraphFile`.
 Note this script has been included to help install the PGD library, but is not guaranteed to run on all systems.
-It has been tested on Ubuntu 18.04.
+It has been tested on Ubuntu 18.04 and macOS 10.13.
 `setupPGD.sh` does not take any arguments.
 
 `bin/updateReactome.sh` downloads the latest version of all human Reactome pathways from [Pathway Commons](https://www.pathwaycommons.org/) and performs graphlet decomposition on them. 
@@ -126,3 +143,10 @@ It takes the following positional arguments:
 >   pgdDirectory:      The directory where pgd is installed. Will default to '../lib/pgd'
 >
 >   reactomeDirectory: (Optional) The directory where Reactome pathways and graphlets will be stored. If not given will default to '../referencePathways'.
+
+## Pathway reconstruction algorithms
+The pathway reconstruction algorithms used in the pathway parameter advising manuscript are available from:
+- PathLinker: [PathLinker](https://github.com/Murali-group/PathLinker)
+- NetBox: originally used [`netbox.tar.gz`](http://cbio.mskcc.org/wp-content/uploads/2012/10/netbox.tar.gz), which has since been replaced by [NetBoxR](https://www.bioconductor.org/packages/release/bioc/html/netboxr.html)
+- Prize-Collecting Steiner Forest: [OmicsIntegrator](https://github.com/fraenkel-lab/OmicsIntegrator/) and [msgsteiner](https://staff.polito.it/alfredo.braunstein/code/2010/08/19/msgsteiner.html)
+- Minimum-Cost Flow: [OR-Tools](https://developers.google.com/optimization/install) and [wrapper script](https://github.com/gitter-lab/influenza-pb2)
