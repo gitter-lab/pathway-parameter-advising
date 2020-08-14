@@ -1,5 +1,6 @@
 # Pathway parameter advising
 [![Build Status](https://travis-ci.com/gitter-lab/pathway-parameter-advising.svg?branch=master)](https://travis-ci.com/gitter-lab/pathway-parameter-advising)
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.3985899.svg)](https://doi.org/10.5281/zenodo.3985899)
 
 Parameter advising for biological pathway creation algorithms.
 
