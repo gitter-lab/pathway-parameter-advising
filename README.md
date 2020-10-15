@@ -13,15 +13,15 @@ Chris S Magnano, Anthony Gitter.
 Google's [OR-Tools library] (https://developers.google.com/optimization/flow/mincostflow) is required to run this script. 
 
 ## Usage
-`minCostFlow.py [-h] --edges\_file EDGES\_FILE --sources\_file SOURCES\_FILE --targets\_file TARGETS\_FILE [--flow FLOW] --output OUTPUT [--capacity CAPACITY]`
+`minCostFlow.py [-h] --edges_file EDGES_FILE --sources_file SOURCES_FILE --targets_file TARGETS_FILE [--flow FLOW] --output OUTPUT [--capacity CAPACITY]`
 
 >  -h, --help:      Show this help message and exit.
 >
->  --edges\_file:   Network file. File should be in SIF file format. 
+>  --edges_file:   Network file. File should be in SIF file format. 
 >
->  --sources\_file: File which denotes source nodes, with one node per line. 
+>  --sources_file: File which denotes source nodes, with one node per line. 
 >
->  --targets\_file: File whiuch denotes target nodes, with one node per line. 
+>  --targets_file: File whiuch denotes target nodes, with one node per line. 
 >
 >  --flow           The amount of flow pushed through the network. 
 >
