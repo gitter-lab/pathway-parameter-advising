@@ -151,4 +151,4 @@ The pathway reconstruction algorithms used in the pathway parameter advising man
 - PathLinker: [PathLinker](https://github.com/Murali-group/PathLinker)
 - NetBox: originally used [`netbox.tar.gz`](http://cbio.mskcc.org/wp-content/uploads/2012/10/netbox.tar.gz), which has since been replaced by [NetBoxR](https://www.bioconductor.org/packages/release/bioc/html/netboxr.html)
 - Prize-Collecting Steiner Forest: [OmicsIntegrator](https://github.com/fraenkel-lab/OmicsIntegrator/) and [msgsteiner](https://staff.polito.it/alfredo.braunstein/code/2010/08/19/msgsteiner.html)
-- Minimum-Cost Flow: [OR-Tools](https://developers.google.com/optimization/install) and [wrapper script](https://github.com/gitter-lab/influenza-pb2)
+- Minimum-Cost Flow: [OR-Tools](https://developers.google.com/optimization/install) and [wrapper script](https://github.com/gitter-lab/pathway-parameter-advising/tree/min-cost-flow)
