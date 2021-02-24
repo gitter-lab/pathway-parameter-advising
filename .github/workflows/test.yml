@@ -36,6 +36,7 @@ jobs:
         shell: bash --login {0}
         run: |
           # Run PPA examples
+          cd bin
           bash runPPA.sh ../data/Wnt wnt_ranking.txt ../lib/pgd/ 
           bash runNetBoxIL2.sh
           # Compare the generated IL2 output with the reference output
