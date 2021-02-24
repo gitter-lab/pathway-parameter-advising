@@ -42,3 +42,4 @@ jobs:
           bash runNetBoxIL2.sh
           # Compare the generated IL2 output with the reference output
           cmp ../tests/reference/il2_ranking.txt il2_ranking.txt
+          echo "Generated IL2 ranking matches expected ranking"
