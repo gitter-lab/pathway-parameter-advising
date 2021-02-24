@@ -1,0 +1,42 @@
+name: Test pathway parameter advising
+on:
+- push
+- pull_request
+jobs:
+  Test:
+    name: Test pathway parameter advising
+    runs-on: ${{ matrix.os }}
+    strategy:
+      matrix:
+        os: [ubuntu-latest, windows-latest, macos-latest]
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v2
+      - name: Install conda environment
+        uses: conda-incubator/setup-miniconda@v2
+        with:
+          activate-environment: ppa
+          environment-file: environment.yml
+          auto-activate-base: false
+          miniconda-version: 'latest'
+      - name: Install pathway parameter advising
+        shell: bash --login {0}
+        run: |
+          python setup.py install
+          # Install PGD dependency
+	  # macOS typically has gcc as an alias for clang, so specifically set gcc
+	  if [[ "$RUNNER_OS" == "macOS" ]]; then
+	    brew install gcc5
+	    export CC=gcc-5
+	    export CXX=g++-5
+	  fi
+	  cd bin
+          bash setupPGD.sh
+      - name: Run and test pathway parameter advising
+        shell: bash --login {0}
+        run: |
+            # Run PPA examples
+	    bash runPPA.sh ../data/Wnt wnt_ranking.txt ../lib/pgd/ 
+	    bash runNetBoxIL2.sh
+	    # Compare the generated IL2 output with the reference output
+	    cmp ../tests/reference/il2_ranking.txt il2_ranking.txt
