@@ -24,19 +24,19 @@ jobs:
         run: |
           python setup.py install
           # Install PGD dependency
-	  # macOS typically has gcc as an alias for clang, so specifically set gcc
-	  if [[ "$RUNNER_OS" == "macOS" ]]; then
-	    brew install gcc5
-	    export CC=gcc-5
-	    export CXX=g++-5
-	  fi
-	  cd bin
+          # macOS typically has gcc as an alias for clang, so specifically set gcc
+          if [[ "$RUNNER_OS" == "macOS" ]]; then
+            brew install gcc5
+            export CC=gcc-5
+            export CXX=g++-5
+          fi
+          cd bin
           bash setupPGD.sh
       - name: Run and test pathway parameter advising
         shell: bash --login {0}
         run: |
-            # Run PPA examples
-	    bash runPPA.sh ../data/Wnt wnt_ranking.txt ../lib/pgd/ 
-	    bash runNetBoxIL2.sh
-	    # Compare the generated IL2 output with the reference output
-	    cmp ../tests/reference/il2_ranking.txt il2_ranking.txt
+          # Run PPA examples
+          bash runPPA.sh ../data/Wnt wnt_ranking.txt ../lib/pgd/ 
+          bash runNetBoxIL2.sh
+          # Compare the generated IL2 output with the reference output
+          cmp ../tests/reference/il2_ranking.txt il2_ranking.txt
