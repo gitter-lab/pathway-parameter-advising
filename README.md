@@ -1,5 +1,5 @@
 # Pathway parameter advising
-[![Build Status](https://travis-ci.com/gitter-lab/pathway-parameter-advising.svg?branch=master)](https://travis-ci.com/gitter-lab/pathway-parameter-advising)
+[![Test pathway parameter advising](https://github.com/gitter-lab/pathway-parameter-advising/actions/workflows/test.yml/badge.svg)](https://github.com/gitter-lab/pathway-parameter-advising/actions/workflows/test.yml)
 [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.3985899.svg)](https://doi.org/10.5281/zenodo.3985899)
 [![PyPI](https://img.shields.io/pypi/v/pathwayParameterAdvising.svg?logo=PyPI)](https://pypi.org/project/pathwayParameterAdvising/)
 
