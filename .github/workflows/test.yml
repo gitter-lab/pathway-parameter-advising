@@ -27,7 +27,9 @@ jobs:
           # Install PGD dependency
           # macOS typically has gcc as an alias for clang, so specifically set gcc
           if [[ "$RUNNER_OS" == "macOS" ]]; then
-            brew install gcc@10.2.0
+            # Instructions for installing an older version of a brew package
+            # https://itnext.io/how-to-install-an-older-brew-package-add141e58d32
+            brew install gcc@10
             export CC=gcc-10
             export CXX=g++-10
           fi
