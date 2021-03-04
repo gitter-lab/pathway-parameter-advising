@@ -1,0 +1,6 @@
+name: ppa
+dependencies:
+- networkx=2.4
+- numpy=1.19
+- python=3.6
+- requests=2.24

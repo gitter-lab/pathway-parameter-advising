@@ -1,5 +1,5 @@
 # Pathway parameter advising
-[![Build Status](https://travis-ci.com/gitter-lab/pathway-parameter-advising.svg?branch=master)](https://travis-ci.com/gitter-lab/pathway-parameter-advising)
+[![Test pathway parameter advising](https://github.com/gitter-lab/pathway-parameter-advising/actions/workflows/test.yml/badge.svg)](https://github.com/gitter-lab/pathway-parameter-advising/actions/workflows/test.yml)
 [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.3985899.svg)](https://doi.org/10.5281/zenodo.3985899)
 [![PyPI](https://img.shields.io/pypi/v/pathwayParameterAdvising.svg?logo=PyPI)](https://pypi.org/project/pathwayParameterAdvising/)
 
@@ -7,11 +7,11 @@ Parameter advising for biological pathway creation algorithms.
 
 ## Citation
 
-Pathway parameter advising is described in the following preprint:
+Pathway parameter advising is described in the following publication:
 
-[Automating parameter selection to avoid implausible biological pathway models](https://doi.org/10.1101/845834).
+[Automating parameter selection to avoid implausible biological pathway models](https://doi.org/10.1038/s41540-020-00167-1).
 Chris S Magnano, Anthony Gitter.
-*bioRxiv* 2019. doi:10.1101/845834
+*npj Systems Biology and Applications*, 7:12, 2021.
 
 ## Dependencies
 
