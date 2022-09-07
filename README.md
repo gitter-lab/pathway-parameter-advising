@@ -11,7 +11,8 @@ Chris S Magnano, Anthony Gitter.
 ## Dependencies
 
 Google's [OR-Tools library](https://developers.google.com/optimization/flow/mincostflow) is required to run this script.
-Version [9.4](https://github.com/google/or-tools/releases/tag/v9.4) split `ortools.graph.pywrapgraph` into separate modules, so version 9.3 is recommended.
+This version of the code used in the manuscript used Python 2.7 and an older version of OR-Tools.
+A separate [repository](https://github.com/gitter-lab/min-cost-flow) updates this code for Python 3.
 
 ## Usage
 `minCostFlow.py [-h] --edges_file EDGES_FILE --sources_file SOURCES_FILE --targets_file TARGETS_FILE [--flow FLOW] --output OUTPUT [--capacity CAPACITY]`
